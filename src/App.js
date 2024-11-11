@@ -11,12 +11,12 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(true);
 
   const handlePrev = () => {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) setStep((s) => s - 1);
     else if (step === 1) setStep(3);
   };
 
   const handleNext = () => {
-    if (step < 3) setStep(step + 1);
+    if (step < 3) setStep((s) => s + 1);
     else if (step === 3) setStep(1);
   };
 
@@ -25,7 +25,7 @@ export default function App() {
       <button
         className="close"
         onClick={() => {
-          setIsOpen(!isOpen);
+          setIsOpen((is) => !is);
         }}
       >
         &times;
